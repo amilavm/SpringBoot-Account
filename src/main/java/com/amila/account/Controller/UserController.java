@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -26,6 +23,7 @@ public class UserController {
         return "welcome spring boot";
     }
 
+    /*retrieve all users*/
     @RequestMapping(value = "/user")
     public ResponseEntity<List<UserAccount>> displayAllUsers(){
         List<UserAccount> users = userAccountRepository.findAll();
@@ -33,6 +31,16 @@ public class UserController {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<List<UserAccount>>(users, HttpStatus.OK);
+    }
+
+    /*retrieve single user*/
+    @RequestMapping(value = "/user/{id}")
+    public ResponseEntity<?> displaySingleUser(@PathVariable("id") Integer id){
+        UserAccount user = userAccountRepository.findById(id);
+        if(user == null){
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<UserAccount>(user, HttpStatus.OK);
     }
 
     /*create user*/
