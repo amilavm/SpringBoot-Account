@@ -27,6 +27,10 @@ public class UserController {
         return "welcome spring boot";
     }
 
+    /************************************************************************************/
+    /*                                   CRUD METHODS                                   */
+    /************************************************************************************/
+
     /*retrieve all users*/
     @RequestMapping(value = "/user")
     public ResponseEntity<List<UserAccount>> displayAllUsers(){
