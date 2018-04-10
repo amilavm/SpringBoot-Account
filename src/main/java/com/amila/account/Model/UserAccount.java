@@ -17,7 +17,7 @@ public class UserAccount {
 
     private String username;
     private String password;
-    private String confirmPassword;
+    //private String confirmPassword;
 
     private String token;
     private String activation;
@@ -106,13 +106,13 @@ public class UserAccount {
     }
 
     @Transient
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
+//    public String getConfirmPassword() {
+//        return confirmPassword;
+//    }
+//
+//    public void setConfirmPassword(String confirmPassword) {
+//        this.confirmPassword = confirmPassword;
+//    }
 
     public String getToken() {
         return token;
@@ -143,7 +143,7 @@ public class UserAccount {
                 ", phone='" + phone + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", confirmPassword='" + confirmPassword + '\'' +
+                //", confirmPassword='" + confirmPassword + '\'' +
                 ", token='" + token + '\'' +
                 ", activation='" + activation + '\'' +
                 '}';
