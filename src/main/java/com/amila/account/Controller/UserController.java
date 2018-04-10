@@ -22,10 +22,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+    //Home page
     @RequestMapping(value = "/welcome")
     public String welcomePage(){
         return "welcome spring boot";
     }
+
+
 
     /************************************************************************************/
     /*                                   CRUD METHODS                                   */
