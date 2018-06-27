@@ -1,5 +1,5 @@
 /.idea
 /target
-account.iml
 mvnw
 mvnw.cmd
+*.iml
