@@ -1,5 +1,7 @@
-/.idea
+target/*
+.settings/*
+.classpath
+.project
+.idea
+*.iml
 /target
-account.iml
-mvnw
-mvnw.cmd
